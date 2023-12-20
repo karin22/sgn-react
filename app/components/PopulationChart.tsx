@@ -40,9 +40,12 @@ const PopulationChart = () => {
   }, [population]);
 
   const fetchData = async () => {
-    const res = await fetch("http://localhost:8080/api/population", {
-      method: "GET",
-    });
+    const res = await fetch(
+      "https://sgn-exam-api-rr5efoci2a-as.a.run.app/api/population",
+      {
+        method: "GET",
+      }
+    );
     const _data = await res.json();
     const populationResult: Population[] = _data.data;
     setPopulation(populationResult);
